@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Homepage — highest priority -->
+  <url>
+    <loc>https://radyahmd.netlify.app/</loc>
+    <lastmod>2026-04-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://radyahmd.netlify.app/assets/images/portfilo.png</image:loc>
+      <image:title>Rady Ahmed — Full-Stack Developer Portfolio</image:title>
+      <image:caption>Professional portfolio of Rady Ahmed, a Full-Stack Developer from Egypt</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://radyahmd.netlify.app/assets/images/masar.png</image:loc>
+      <image:title>Masar Educational Platform</image:title>
+      <image:caption>Full-stack educational platform with learning paths and automated assessments</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://radyahmd.netlify.app/assets/images/project-charity.png</image:loc>
+      <image:title>Charity Management Platform</image:title>
+      <image:caption>Full-stack charity operations management system with role-based dashboards</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://radyahmd.netlify.app/assets/images/project-alrwda.png</image:loc>
+      <image:title>Cleaning Company Website</image:title>
+      <image:caption>SEO-optimized business website for a cleaning company in Saudi Arabia</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Section deep links (helps Google understand page structure) -->
+  <url>
+    <loc>https://radyahmd.netlify.app/#about</loc>
+    <lastmod>2026-04-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://radyahmd.netlify.app/#services</loc>
+    <lastmod>2026-04-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://radyahmd.netlify.app/#projects</loc>
+    <lastmod>2026-04-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://radyahmd.netlify.app/#tech</loc>
+    <lastmod>2026-04-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://radyahmd.netlify.app/#contact</loc>
+    <lastmod>2026-04-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>

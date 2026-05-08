@@ -1,0 +1,22 @@
+{
+  "name": "Rady Ahmed — Full-Stack Developer Portfolio",
+  "short_name": "Rady.dev",
+  "description": "Full-Stack Developer from Egypt building production-ready web applications, educational platforms, and admin dashboards using React, Next.js, PHP, and MySQL.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#06060b",
+  "theme_color": "#6366f1",
+  "categories": ["portfolio", "development", "technology"],
+  "lang": "en",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

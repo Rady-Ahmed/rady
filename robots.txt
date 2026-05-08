@@ -1,0 +1,32 @@
+﻿# ============================================
+# robots.txt — Rady Ahmed Developer Portfolio
+# Optimized for fast Google indexing
+# ============================================
+
+# Allow all search engine crawlers
+User-agent: *
+Allow: /
+Allow: /sitemap.xml
+Allow: /robots.txt
+
+# Block development & system files
+Disallow: /.vscode/
+Disallow: /.git/
+Disallow: /.gitignore
+Disallow: /node_modules/
+
+# Google-specific directives
+User-agent: Googlebot
+Allow: /
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.webp$
+Allow: /*.svg$
+
+# Sitemap location (critical for fast indexing)
+Sitemap: https://radyahmd.netlify.app/sitemap.xml
+
+# Host
+Host: https://radyahmd.netlify.app

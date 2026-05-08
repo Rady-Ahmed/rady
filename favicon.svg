@@ -1,0 +1,57 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0a0f"/>
+      <stop offset="100%" stop-color="#111118"/>
+    </linearGradient>
+    <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="50%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+    <linearGradient id="letterGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="bracketGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="128" height="128" rx="28" fill="url(#bgGrad)"/>
+
+  <!-- Outer rotating ring (dashed) -->
+  <circle cx="64" cy="64" r="54" stroke="url(#ringGrad)" stroke-width="2.5" stroke-dasharray="6 4" fill="none" opacity="0.8">
+    <animateTransform attributeName="transform" type="rotate" from="0 64 64" to="360 64 64" dur="20s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Inner ring -->
+  <circle cx="64" cy="64" r="44" stroke="#8b5cf6" stroke-width="1.5" fill="none" opacity="0.25">
+    <animateTransform attributeName="transform" type="rotate" from="360 64 64" to="0 64 64" dur="15s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Code brackets -->
+  <g filter="url(#glow)" opacity="0.75">
+    <text x="28" y="74" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="22" font-weight="700" fill="url(#bracketGrad)">&lt;</text>
+    <text x="82" y="74" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="22" font-weight="700" fill="url(#bracketGrad)">/&gt;</text>
+  </g>
+
+  <!-- Letter R -->
+  <g filter="url(#glow)">
+    <text x="64" y="76" font-family="'Inter', 'Segoe UI', sans-serif" font-size="40" font-weight="800" fill="url(#letterGrad)" text-anchor="middle">R</text>
+  </g>
+
+  <!-- Subtle glow dots -->
+  <circle cx="64" cy="10" r="2" fill="#6366f1" opacity="0.6">
+    <animate attributeName="opacity" values="0.6;0.2;0.6" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="64" cy="118" r="2" fill="#8b5cf6" opacity="0.4">
+    <animate attributeName="opacity" values="0.4;0.1;0.4" dur="3s" begin="1.5s" repeatCount="indefinite"/>
+  </circle>
+</svg>
