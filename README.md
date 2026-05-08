@@ -1,2 +1,2 @@
 # rady
-my portfoilo
+my portfolio
