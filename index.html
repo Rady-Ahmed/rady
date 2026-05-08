@@ -71,7 +71,7 @@
   <!-- Performance: Preload Critical Resources -->
   <link rel="preload" href="css/variables.css" as="style">
   <link rel="preload" href="css/base.css" as="style">
-  <link rel="preload" href="assets/images/portfilo.png" as="image" type="image/png">
+  <link rel="preload" href="assets/images/portfilo.webp" as="image" type="image/webp">
 
   <!-- Security Headers -->
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
@@ -529,7 +529,7 @@
           <div class="hero-visual reveal-scale reveal-delay-2">
             <div class="hero-image-wrapper">
               <div class="hero-image-glow"></div>
-              <img src="assets/images/portfilo.png" alt="Rady Ahmed - Full-Stack Developer" class="hero-image"
+              <img src="assets/images/portfilo.webp" alt="Rady Ahmed - Full-Stack Developer" class="hero-image"
                 width="380" height="380" loading="eager">
             </div>
           </div>
@@ -712,7 +712,7 @@
           <!-- 🧩 Project 1: Masar -->
           <div class="card project-card reveal" style="padding: 0;">
             <div class="project-image-wrapper">
-              <img src="assets/images/masar.png" alt="Masar Platform — Educational learning paths system"
+              <img src="assets/images/masar.webp" alt="Masar Platform — Educational learning paths system"
                 class="project-image" loading="lazy" width="600" height="400">
               <div class="project-overlay"></div>
             </div>
@@ -776,7 +776,7 @@
           <!-- 🧩 Project 2: Charity -->
           <div class="card project-card reveal" style="padding: 0;">
             <div class="project-image-wrapper">
-              <img src="assets/images/project-charity.png"
+              <img src="assets/images/project-charity.webp"
                 alt="Charity Management Platform — Admin operations dashboard" class="project-image" loading="lazy"
                 width="600" height="400">
               <div class="project-overlay"></div>
@@ -839,7 +839,7 @@
           <!-- 🧩 Project 3: Cleaning Company -->
           <div class="card project-card reveal" style="padding: 0;">
             <div class="project-image-wrapper">
-              <img src="assets/images/project-alrwda.png"
+              <img src="assets/images/project-alrwda.webp"
                 alt="Cleaning Company Website — Service showcase for KSA business" class="project-image" loading="lazy"
                 width="600" height="400">
               <div class="project-overlay"></div>
@@ -1631,11 +1631,12 @@
   <div class="cursor-dot" id="cursor-dot"></div>
   <div class="cursor-ring" id="cursor-ring"></div>
 
-  <!-- Scripts -->
-  <script src="js/security.js"></script>
-  <script src="js/data.js"></script>
-  <script src="js/animations.js"></script>
-  <script src="js/main.js"></script>
+  <!-- Scripts (deferred for faster rendering) -->
+  <link rel="preload" href="js/main.js" as="script">
+  <script src="js/security.js" defer></script>
+  <script src="js/data.js" defer></script>
+  <script src="js/animations.js" defer></script>
+  <script src="js/main.js" defer></script>
 </body>
 
 </html>
