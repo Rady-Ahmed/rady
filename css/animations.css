@@ -1,0 +1,471 @@
+/* ============================================
+   ANIMATIONS & KEYFRAMES — Premium
+   ============================================ */
+
+/* ── Reduced Motion Support ── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ── Reveal Animations ── */
+.reveal,
+.reveal-scale,
+.reveal-left,
+.reveal-right {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.reveal.revealed,
+.reveal-scale.revealed,
+.reveal-left.revealed,
+.reveal-right.revealed {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.8s var(--ease-out-expo);
+}
+
+.reveal-delay-1 { transition-delay: 0.12s; }
+.reveal-delay-2 { transition-delay: 0.24s; }
+.reveal-delay-3 { transition-delay: 0.36s; }
+.reveal-delay-4 { transition-delay: 0.48s; }
+
+.reveal-scale {
+  transform: scale(0.92) translateY(40px);
+}
+
+.reveal-scale.revealed {
+  transform: scale(1) translateY(0);
+}
+
+.reveal-left {
+  transform: translateX(-60px) translateY(0);
+}
+
+.reveal-left.revealed {
+  transform: translateX(0) translateY(0);
+}
+
+.reveal-right {
+  transform: translateX(60px) translateY(0);
+}
+
+.reveal-right.revealed {
+  transform: translateX(0) translateY(0);
+}
+
+/* ── Smooth Page Load ── */
+body.loaded section {
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+body.loaded {
+  animation: fadeIn 0.5s ease;
+}
+
+/* ── Keyframe Animations ── */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(99, 102, 241, 0.4); }
+  50% { box-shadow: 0 0 40px rgba(99, 102, 241, 0.8); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes ripple-anim {
+  from { transform: scale(0); opacity: 1; }
+  to { transform: scale(4); opacity: 0; }
+}
+
+@keyframes bounceIn {
+  0% { opacity: 0; transform: scale(0.3); }
+  50% { opacity: 1; transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(100px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-100px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* ── Pulse Badge ── */
+.pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.pulse::before {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+}
+
+/* ══════════════════════════════════════
+   PREMIUM CARD EFFECTS
+   ══════════════════════════════════════ */
+
+/* Animated border gradient on hover */
+.card-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-glow::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 300%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(99, 102, 241, 0.03) 25%,
+    rgba(139, 92, 246, 0.06) 50%,
+    rgba(99, 102, 241, 0.03) 75%,
+    transparent 100%
+  );
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.card-glow:hover::before {
+  opacity: 1;
+  animation: cardShine 1.5s ease-in-out;
+}
+
+@keyframes cardShine {
+  0% { transform: translateX(-30%); }
+  100% { transform: translateX(30%); }
+}
+
+/* ── Hero Title Gradient Animation ── */
+.text-gradient {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6, #ec4899, #06b6d4);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-shift 8s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ── Loading Animation ── */
+.loading {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(99, 102, 241, 0.3);
+  border-top-color: #6366f1;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Skeleton Loader ── */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--bg-secondary) 25%,
+    var(--bg-tertiary) 50%,
+    var(--bg-secondary) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* ══════════════════════════════════════
+   BUTTON INTERACTIONS — Premium
+   ══════════════════════════════════════ */
+
+.btn {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.35s var(--ease-out-expo);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+}
+
+.btn:active {
+  transform: translateY(0) scale(0.98);
+  transition-duration: 0.1s;
+}
+
+/* Magnetic button effect class (applied via JS) */
+.btn-magnetic {
+  transition: transform 0.2s var(--ease-out-expo);
+}
+
+/* ══════════════════════════════════════
+   CARD HOVER EFFECTS — Enhanced
+   ══════════════════════════════════════ */
+
+.card {
+  transition: all 0.45s var(--ease-out-expo);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(99, 102, 241, 0.12), 
+              0 0 0 1px rgba(99, 102, 241, 0.08);
+}
+
+/* Spotlight cursor follow effect — positioned via JS */
+.card-spotlight {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+}
+
+.card:hover .card-spotlight {
+  opacity: 1;
+}
+
+/* ── Link Underline Animation ── */
+/* Only apply to inline text links — NOT nav, buttons, social, cards, etc. */
+p a,
+.about-text a,
+.card-description a,
+.contact-info-text a {
+  position: relative;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+p a::after,
+.about-text a::after,
+.card-description a::after,
+.contact-info-text a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s var(--ease-out-expo);
+}
+
+p a:hover::after,
+.about-text a:hover::after,
+.card-description a:hover::after,
+.contact-info-text a:hover::after {
+  width: 100%;
+}
+
+/* ── Form Input Focus ── */
+.form-input,
+.form-textarea {
+  transition: all 0.35s var(--ease-out-expo);
+  border-color: var(--border);
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-glow),
+              0 4px 16px rgba(99, 102, 241, 0.1);
+  transform: translateY(-1px);
+}
+
+/* ── Counter Animation ── */
+.counter-done {
+  animation: bounceIn 0.6s var(--ease-spring);
+}
+
+/* ── Mobile Menu Animation ── */
+.mobile-nav {
+  animation: slideInRight 0.3s var(--ease-out-expo);
+}
+
+.mobile-nav.open {
+  animation: slideInRight 0.3s var(--ease-out-expo);
+}
+
+/* ── Header Scroll Animation ── */
+.header {
+  transition: all 0.35s var(--ease-out-expo);
+}
+
+.header.scrolled {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px) saturate(1.3);
+}
+
+/* ══════════════════════════════════════
+   STAGGER CASCADE ANIMATION
+   ══════════════════════════════════════ */
+
+.stagger-item {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.5s var(--ease-out-expo),
+              transform 0.5s var(--ease-out-expo);
+}
+
+.stagger-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ══════════════════════════════════════
+   BADGE SHIMMER
+   ══════════════════════════════════════ */
+
+.badge-accent {
+  position: relative;
+  overflow: hidden;
+}
+
+.badge-accent::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+  animation: badgeShimmer 3s ease-in-out infinite;
+}
+
+@keyframes badgeShimmer {
+  0% { left: -100%; }
+  50% { left: 100%; }
+  100% { left: 100%; }
+}
+
+/* ══════════════════════════════════════
+   THEME TOGGLE MORPH
+   ══════════════════════════════════════ */
+
+.theme-toggle svg {
+  transition: transform 0.5s var(--ease-spring),
+              opacity 0.3s ease;
+}
+
+.theme-toggle:hover svg {
+  transform: rotate(30deg) scale(1.1);
+}
+
+[data-theme="light"] .theme-toggle:hover svg {
+  transform: rotate(-30deg) scale(1.1);
+}
+
+/* ══════════════════════════════════════
+   BORDER BEAM ANIMATION
+   ══════════════════════════════════════ */
+
+@keyframes borderBeam {
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
+}
+
+/* ══════════════════════════════════════
+   AURORA GRADIENT BACKGROUND
+   ══════════════════════════════════════ */
+
+@keyframes auroraShift {
+  0% { background-position: 0% 50%; }
+  25% { background-position: 50% 0%; }
+  50% { background-position: 100% 50%; }
+  75% { background-position: 50% 100%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ══════════════════════════════════════
+   TEXT SPLIT REVEAL
+   ══════════════════════════════════════ */
+
+.split-word {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+}
+
+.split-word-inner {
+  display: inline-block;
+  transform: translateY(105%);
+  transition: transform 0.6s var(--ease-out-expo);
+}
+
+.split-word-inner.revealed {
+  transform: translateY(0);
+}

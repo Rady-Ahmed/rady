@@ -1,0 +1,50 @@
+/* ============================================
+   RESPONSIVE LAYER — safe areas & scroll offset
+   Loaded last so it can refine fixed header + notches.
+   ============================================ */
+
+html {
+  scroll-padding-top: calc(var(--header-height) + env(safe-area-inset-top, 0px));
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-left: max(var(--space-4), env(safe-area-inset-left, 0px));
+    padding-right: max(var(--space-4), env(safe-area-inset-right, 0px));
+  }
+
+  .header-inner {
+    padding-left: max(var(--space-4), env(safe-area-inset-left, 0px));
+    padding-right: max(var(--space-4), env(safe-area-inset-right, 0px));
+  }
+
+  /* Reduce animations on mobile for better performance */
+  .hero-orb {
+    animation-duration: 20s !important;
+  }
+
+  .hero-grid::after {
+    animation-duration: 12s !important;
+  }
+
+  .hero-visual::before,
+  .hero-visual::after {
+    display: none;
+  }
+
+  /* Simpler card hover on touch */
+  .card:hover {
+    transform: translateY(-3px);
+  }
+
+  .service-card:hover {
+    transform: translateY(-4px);
+  }
+}
+
+/* ── Ultra-wide screens ── */
+@media (min-width: 1600px) {
+  .container {
+    max-width: var(--container-2xl);
+  }
+}
